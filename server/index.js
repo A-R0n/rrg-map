@@ -39,6 +39,7 @@ massive(process.env.CONNECTION_STRING)
 app.get(`/api/routes`, getAllRoutes);
 app.get(`/api/parkinglot/:parkinglotid`, getParkingLotId);
 
+app.use(express.static(`${__dirname}/../build`))
 
 app.listen(port, () => {
     console.log(`Nothin can stop me im All the wayyyy upppp: ${port}`);

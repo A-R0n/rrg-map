@@ -1,5 +1,5 @@
 {
-  "name": "rrg-google_maps",
+  "name": "rrg-map",
   "proxy": "http://localhost:8082",
   "homepage": "/build",
   "version": "0.1.0",

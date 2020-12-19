@@ -1,7 +1,15 @@
-const getAllRoutes = (req, res, next) => {
+// const getAllRoutes = (req, res, next) => {
+//     req.app
+//         .get('db')
+//         .get_all_routes()
+//         .then(response => res.status(200).send(response))
+//         .catch(err => res.status(500).send(err))
+// };
+
+const getAllBasicRouteInfo = (req, res, next) => {
     req.app
         .get('db')
-        .get_all_routes()
+        .get_basic_route_info()
         .then(response => res.status(200).send(response))
         .catch(err => res.status(500).send(err))
 };
@@ -16,6 +24,7 @@ const getParkingLotId = (req, res, next) => {
         .catch(err => res.status(500).send(err))
 };
 module.exports = {
-    getAllRoutes,
-    getParkingLotId
+    // getAllRoutes,
+    getParkingLotId,
+    getAllBasicRouteInfo
 }

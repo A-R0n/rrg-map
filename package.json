@@ -15,20 +15,13 @@
     "concurrently": "^5.3.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "eslint": "^7.15.0",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-react-perf": "^3.3.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "massive": "^6.6.1",
-    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-google-maps": "^9.4.5",
-    "react-scripts": "4.0.0",
-    "use-places-autocomplete": "^1.6.0",
-    "web-vitals": "^0.2.4"
+    "react-scripts": "4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -36,15 +29,6 @@
     "both": "concurrently \"react-scripts start\" \"nodemon server/index.js --watch server\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:react-hooks/recommended",
-      "eslint:recommended",
-      "plugin:react/recommended"
-    ]
   },
   "browserslist": {
     "production": [
@@ -59,7 +43,6 @@
     ]
   },
   "plugins": [
-    "react-perf",
     "react",
     "react-hooks"
   ]

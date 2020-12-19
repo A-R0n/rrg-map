@@ -8,7 +8,7 @@ const session = require("express-session");
 // process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
 const app = express();
 
-const {getAllRoutes, getParkingLotId} = require("./Controllers/main");
+const {getParkingLotId, getAllBasicRouteInfo} = require("./Controllers/main");
 
 const port = process.env.SERVER_PORT || 8081;
 
@@ -36,7 +36,8 @@ massive(process.env.CONNECTION_STRING)
     console.log(err);
 });
 
-app.get(`/api/routes`, getAllRoutes);
+// app.get(`/api/routes`, getAllRoutes);
+app.get(`/api/routes`, getAllBasicRouteInfo);
 app.get(`/api/parkinglot/:parkinglotid`, getParkingLotId);
 
 app.use(express.static(`${__dirname}/../build`))

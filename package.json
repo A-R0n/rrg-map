@@ -1,7 +1,6 @@
 {
   "name": "rrg-map",
   "proxy": "http://localhost:8082",
-  "homepage": "/build",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +20,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-google-maps": "^9.4.5",
-    "react-scripts": "4.0.0"
+    "react-scripts": "4.0.0",
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -13,18 +13,15 @@ const port = process.env.SERVER_PORT || 8081;
 app.use(json());
 app.use(cors());
 
-const config = {
+const dbConfig = {
   connectionString: process.env.CONNECTION_STRING,
-  // i am opting out of MITM protection by setting this to false
   ssl: {
     rejectUnauthorized: false
   }
 };
 
-
-massive(config)
+massive(dbConfig)
   .then(dbInstance => {
-    // console.log("read this dbInstance:", dbInstance);
     app.set("db", dbInstance);
   })
   .catch(err => console.log(err));

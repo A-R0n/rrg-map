@@ -15,11 +15,11 @@ export const SearchInputBox = (panTo) => {
     let [routeName, setRouteName] = React.useState("");
     let [parkingLotData, setParkingLotData] = React.useState([]);
 
-    React.useEffect(() => {
-        axios.get("/api/routes").then(res => {
-            setAllRoutes(res.data);
-        });
-    }, []);
+    // React.useEffect(() => {
+    //     axios.get("/api/routes").then(res => {
+    //         setAllRoutes(res.data);
+    //     });
+    // }, []);
 
     let routeIWantToClimb = allRoutes.length > 0 && allRoutes.filter((route) => {
         return (
@@ -77,6 +77,12 @@ export const SearchInputBox = (panTo) => {
         }
     }
 
+    let handleClick = () => {
+        axios.get("/api/routes").then(res => {
+            setAllRoutes(res.data);
+        });
+    }
+
     return (
         <div className="searched">
             <Combobox
@@ -84,7 +90,7 @@ export const SearchInputBox = (panTo) => {
                     await routeWithoutGrade(e);
                 }}
             >
-                <ComboboxInput value={routeName} onChange={(e)=>{setRouteName(e.target.value)}} placeholder="Enter route name" />
+                <ComboboxInput value={routeName} onClick={handleClick()}onChange={(e)=>{setRouteName(e.target.value)}} placeholder="Enter route name" />
                 <ComboboxPopover>
                     <ComboboxList>
                         {routeIWantToClimb}

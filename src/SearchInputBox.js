@@ -33,7 +33,6 @@ export const SearchInputBox = (panTo) => {
         )
     });
 
-
     let getParkingLotId = async (id) => {
         let response = await axios.get(`/api/parkinglot/${id}`);
         await setParkingLotData(response.data);

@@ -25,7 +25,6 @@ export default function App() {
     lng: -83.6828
   };
 
-  
   const onMapLoad = React.useCallback((map) => {
     mapRef.current = map;
   }, []);

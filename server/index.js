@@ -4,7 +4,9 @@ const { json } = require("body-parser");
 const cors = require("cors");
 const massive = require("massive");
 const hsts = require('hsts');
-const csp = require('content-security-policy');
+const permissionsPolicy = require('permissions-policy')
+
+// const csp = require('content-security-policy');
 
 const app = express();
 
@@ -14,6 +16,15 @@ const port = process.env.SERVER_PORT || 8081;
 
 app.use(json());
 app.use(cors());
+
+app.use(permissionsPolicy({
+  features: {
+    fullscreen: ['self'],               // fullscreen=()
+    vibrate: ['none'],                  // vibrate=(none)
+    payment: ['self', '"rrgmap.tech"'], // payment=(self "example.com")
+    syncXhr: [],                        // syncXhr=()
+  }
+}));
 
 app.use(hsts({
   maxAge: 31536000,        // Must be at least 1 year to be approved
@@ -34,21 +45,22 @@ massive(dbConfig)
   })
   .catch(err => console.log(err));
 
-const cspPolicy = {
-  'default-src': csp.SRC_NONE,
-  'script-src': [ csp.SRC_SELF, csp.SRC_DATA ]
-};
+// const cspPolicy = {
+//   'default-src': csp.SRC_NONE,
+//   'script-src': [ csp.SRC_SELF, csp.SRC_DATA ]
+// };
    
-const globalCSP = csp.getCSP(csp.STARTER_OPTIONS);
-const localCSP = csp.getCSP(cspPolicy);
+// const globalCSP = csp.getCSP(csp.STARTER_OPTIONS);
+// const localCSP = csp.getCSP(cspPolicy);
 
-app.use(globalCSP);
+// app.use(globalCSP);
 
- 
-// This will apply the local policy just to this path, overriding the globla policy
-app.get('/local', localCSP, (req, res) => {
-  res.send('Using path local content security policy!');
-});
+// app.get('/', (req, res) => {
+//   res.send('Using global content security policy!');
+// });
+// app.get('/local', localCSP, (req, res) => {
+//   res.send('Using path local content security policy!');
+// });
 
 app.get(`/api/routes`, getAllBasicRouteInfo);
 app.get(`/api/parkinglot/:parkinglotid`, getParkingLotId);

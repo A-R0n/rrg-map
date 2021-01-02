@@ -7,7 +7,6 @@ export const Directions = (fields) => {
     const [response, setResponse] = React.useState(null);
 
     const directionsCallback = React.useCallback((response) => {
-        console.log(response);
         if (response !== null) {
             if (response.status === 'OK') {
                 setResponse(response)

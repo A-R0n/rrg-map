@@ -18,7 +18,7 @@ export const SearchInputBox = (panTo) => {
     React.useEffect(() => {
         axios.get("/api/routes").then(res => {
             setAllRoutes(res.data);
-        })
+        });
     }, []);
 
     let routeIWantToClimb = allRoutes.length > 0 && allRoutes.filter((route) => {

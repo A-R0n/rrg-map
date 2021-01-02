@@ -24,6 +24,7 @@ export default function App() {
     lat: 37.7831,
     lng: -83.6828
   };
+
   
   const onMapLoad = React.useCallback((map) => {
     mapRef.current = map;
@@ -37,7 +38,6 @@ export default function App() {
   if (loadError) return "Error Loading Maps";
   if(!isLoaded) return "Loading Maps";
 
-  console.log("app");
   return (
     <div className="App"> 
       <h1>Red River Gorge</h1>

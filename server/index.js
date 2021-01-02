@@ -64,9 +64,9 @@ const localCSP = csp.getCSP(cspPolicy);
 
 app.use(globalCSP);
 
-app.get('/', (req, res) => {
-  res.send('Using global content security policy!');
-});
+// app.get('/', (req, res) => {
+//   res.send('Using global content security policy!');
+// });
 app.get('/local', localCSP, (req, res) => {
   res.send('Using path local content security policy!');
 });

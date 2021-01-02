@@ -8,6 +8,8 @@ const permissionsPolicy = require('permissions-policy');
 const frameguard = require("frameguard");
 const nosniff = require('dont-sniff-mimetype')
 const csp = require('content-security-policy');
+const referrerPolicy = require('referrer-policy');
+
 
 const app = express();
 
@@ -42,6 +44,9 @@ const dbConfig = {
     rejectUnauthorized: false
   }
 };
+
+app.use(referrerPolicy({ policy: 'same-origin' }));
+
 
 massive(dbConfig)
   .then(dbInstance => {

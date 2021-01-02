@@ -4,7 +4,9 @@ const { json } = require("body-parser");
 const cors = require("cors");
 const massive = require("massive");
 const hsts = require('hsts');
-const permissionsPolicy = require('permissions-policy')
+const permissionsPolicy = require('permissions-policy');
+const frameguard = require("frameguard");
+
 
 // const csp = require('content-security-policy');
 
@@ -31,6 +33,9 @@ app.use(hsts({
   includeSubDomains: true, // Must be enabled to be approved
   preload: true
 }));
+
+app.use(frameguard({ action: "sameorigin" }));
+
 
 const dbConfig = {
   connectionString: process.env.CONNECTION_STRING,

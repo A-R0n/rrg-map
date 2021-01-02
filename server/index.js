@@ -5,8 +5,8 @@ const cors = require("cors");
 const massive = require("massive");
 const hsts = require('hsts');
 const permissionsPolicy = require('permissions-policy');
-const frameguard = require("frameguard");
-
+const frameguard = require("frameguard"); // this isnt working
+const nosniff = require('dont-sniff-mimetype')
 
 // const csp = require('content-security-policy');
 
@@ -18,6 +18,7 @@ const port = process.env.SERVER_PORT || 8081;
 
 app.use(json());
 app.use(cors());
+app.use(nosniff());
 
 app.use(permissionsPolicy({
   features: {
@@ -35,7 +36,6 @@ app.use(hsts({
 }));
 
 app.use(frameguard({ action: "deny" }));
-
 
 const dbConfig = {
   connectionString: process.env.CONNECTION_STRING,

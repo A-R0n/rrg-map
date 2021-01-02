@@ -34,7 +34,7 @@ app.use(hsts({
   preload: true
 }));
 
-app.use(frameguard({ action: "sameorigin" }));
+app.use(frameguard({ action: "deny" }));
 
 
 const dbConfig = {

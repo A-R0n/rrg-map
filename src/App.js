@@ -1,6 +1,6 @@
 import './App.css';
 import React from "react";
-// import {SearchInputBox} from './SearchInputBox';
+import {SearchInputBox} from './SearchInputBox';
 import {GoogleMap, useLoadScript} from "@react-google-maps/api";
 import {Directions} from './Directions.js';
 import "@reach/combobox/styles.css";
@@ -41,8 +41,7 @@ export default function App() {
     <div className="App"> 
       <h1>Red River Gorge</h1>
       <div className="header">
-        {/* <SearchInputBox panTo={panTo}/> */}
-        {/* <LocateUser panTo={panTo}/> */}
+        <SearchInputBox panTo={panTo}/>
       </div>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}

@@ -3,6 +3,8 @@ const express = require("express");
 const { json } = require("body-parser");
 const cors = require("cors");
 const massive = require("massive");
+const hsts = require('hsts');
+
 
 const app = express();
 
@@ -12,6 +14,12 @@ const port = process.env.SERVER_PORT || 8081;
 
 app.use(json());
 app.use(cors());
+
+app.use(hsts({
+  maxAge: 31536000,        // Must be at least 1 year to be approved
+  includeSubDomains: true, // Must be enabled to be approved
+  preload: true
+}));
 
 const dbConfig = {
   connectionString: process.env.CONNECTION_STRING,

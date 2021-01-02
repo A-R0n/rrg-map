@@ -4,7 +4,7 @@ const { json } = require("body-parser");
 const cors = require("cors");
 const massive = require("massive");
 const hsts = require('hsts');
-
+const csp = require('content-security-policy');
 
 const app = express();
 
@@ -33,6 +33,22 @@ massive(dbConfig)
     app.set("db", dbInstance);
   })
   .catch(err => console.log(err));
+
+const cspPolicy = {
+  'default-src': csp.SRC_NONE,
+  'script-src': [ csp.SRC_SELF, csp.SRC_DATA ]
+};
+   
+const globalCSP = csp.getCSP(csp.STARTER_OPTIONS);
+const localCSP = csp.getCSP(cspPolicy);
+
+app.use(globalCSP);
+
+ 
+// This will apply the local policy just to this path, overriding the globla policy
+app.get('/local', localCSP, (req, res) => {
+  res.send('Using path local content security policy!');
+});
 
 app.get(`/api/routes`, getAllBasicRouteInfo);
 app.get(`/api/parkinglot/:parkinglotid`, getParkingLotId);

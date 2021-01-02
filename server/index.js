@@ -5,10 +5,9 @@ const cors = require("cors");
 const massive = require("massive");
 const hsts = require('hsts');
 const permissionsPolicy = require('permissions-policy');
-const frameguard = require("frameguard"); // this isnt working
+const frameguard = require("frameguard");
 const nosniff = require('dont-sniff-mimetype')
-
-// const csp = require('content-security-policy');
+const csp = require('content-security-policy');
 
 const app = express();
 
@@ -50,22 +49,22 @@ massive(dbConfig)
   })
   .catch(err => console.log(err));
 
-// const cspPolicy = {
-//   'default-src': csp.SRC_NONE,
-//   'script-src': [ csp.SRC_SELF, csp.SRC_DATA ]
-// };
+const cspPolicy = {
+  'default-src': csp.SRC_NONE,
+  'script-src': [ csp.SRC_SELF, csp.SRC_DATA ]
+};
    
-// const globalCSP = csp.getCSP(csp.STARTER_OPTIONS);
-// const localCSP = csp.getCSP(cspPolicy);
+const globalCSP = csp.getCSP(csp.STARTER_OPTIONS);
+const localCSP = csp.getCSP(cspPolicy);
 
-// app.use(globalCSP);
+app.use(globalCSP);
 
-// app.get('/', (req, res) => {
-//   res.send('Using global content security policy!');
-// });
-// app.get('/local', localCSP, (req, res) => {
-//   res.send('Using path local content security policy!');
-// });
+app.get('/', (req, res) => {
+  res.send('Using global content security policy!');
+});
+app.get('/local', localCSP, (req, res) => {
+  res.send('Using path local content security policy!');
+});
 
 app.get(`/api/routes`, getAllBasicRouteInfo);
 app.get(`/api/parkinglot/:parkinglotid`, getParkingLotId);

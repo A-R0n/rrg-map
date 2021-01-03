@@ -1,4 +1,5 @@
 require("dotenv").config();
+const path = require('path');
 const express = require("express");
 const { json } = require("body-parser");
 const cors = require("cors");
@@ -74,7 +75,13 @@ massive(dbConfig)
 app.get(`/api/routes`, getAllBasicRouteInfo);
 app.get(`/api/parkinglot/:parkinglotid`, getParkingLotId);
 
-app.use(express.static(`${__dirname}/../build`));
+// app.use(express.static(`${__dirname}/../build`));
+
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 app.listen(port, () => {
     console.log(`Nothin can stop me im All the wayyyy upppp: ${port}`);

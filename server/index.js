@@ -24,7 +24,7 @@ const permissionsPolicy = require('permissions-policy');
 const frameguard = require("frameguard");
 // Prevent remote resources from being loaded dangerously
 const nosniff = require('dont-sniff-mimetype')
-const csp = require('content-security-policy');
+// const csp = require('content-security-policy');
 const referrerPolicy = require('referrer-policy');
 
 const dbConfig = {
@@ -34,7 +34,7 @@ const dbConfig = {
   }
 };
 
-const globalCSP = csp.getCSP(csp.STARTER_OPTIONS);
+// const globalCSP = csp.getCSP(csp.STARTER_OPTIONS);
 
 app.use(json());
 app.use(cors());
@@ -53,7 +53,7 @@ app.use(permissionsPolicy({
 app.use(frameguard({ action: "deny" }));
 app.use(nosniff());
 app.use(referrerPolicy({ policy: 'same-origin' }));
-app.use(globalCSP);
+// app.use(globalCSP);
 
 // Establish db connection
 massive(dbConfig)

@@ -47,10 +47,15 @@ export const SearchInputBox = (panTo) => {
     }, [parkingLotData]);
 
     React.useEffect(() => {
-        setRouteName(routeName.charAt(0).toUpperCase() + routeName.slice(1));
+        let splitStr = routeName.split(" ");
+        for(let i = 0; i < splitStr.length; i++) {
+            splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+        }
+        setRouteName(splitStr.join(' '));
     }, [routeName])
 
     let findCords = async (name) => {
+        console.log(name);
         allRoutes.length > 0 && await allRoutes.filter(route => {
             return (
                 route.routename === name
@@ -65,6 +70,7 @@ export const SearchInputBox = (panTo) => {
 
     let routeWithoutGrade = async (e) => {
         console.log("routeWithoutGrade", e);
+
         for(let i = 0; i < e.length; i++) {
             if(e[i] !== ",") {
                 routesName += e[i];

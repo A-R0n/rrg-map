@@ -23,7 +23,7 @@ export const SearchInputBox = (panTo) => {
 
     let routeIWantToClimb = allRoutes.length > 0 && allRoutes.filter((route) => {
         return (
-            routeName.length > 1 && route.routename.includes(routeName)
+            routeName.length > 1 && route.routename.toLowerCase().includes(routeName.toLowerCase())
         );
     })
     .map((route, index) => {
@@ -47,11 +47,7 @@ export const SearchInputBox = (panTo) => {
     }, [parkingLotData]);
 
     React.useEffect(() => {
-        let splitStr = routeName.split(" ");
-        for(let i = 0; i < splitStr.length; i++) {
-            splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
-        }
-        setRouteName(splitStr.join(' '));
+        setRouteName(routeName);
     }, [routeName])
 
     let findCords = async (name) => {

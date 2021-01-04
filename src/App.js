@@ -1,8 +1,10 @@
 import './App.css';
 import React from "react";
 import {SearchInputBox} from './SearchInputBox';
-import {GoogleMap, useLoadScript} from "@react-google-maps/api";
 import {Directions} from './Directions.js';
+// const Directions = React.lazy(() => import('./Directions'));
+
+import {GoogleMap, useLoadScript} from "@react-google-maps/api";
 import "@reach/combobox/styles.css";
 
 export default function App() {
@@ -48,8 +50,7 @@ export default function App() {
         zoom={11}
         center={miguels}
         onLoad={onMapLoad}>
-          
-          {<Directions geoCords={geoCords} mapRef={mapRef}/>}
+            {<Directions geoCords={geoCords} mapRef={mapRef}/>}
       </GoogleMap>
     </div>
   );

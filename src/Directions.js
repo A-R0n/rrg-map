@@ -36,9 +36,6 @@ export const Directions = (fields) => {
               travelMode: "DRIVING"
             }}
             callback={directionsCallback}
-            onLoad={directionsService => {
-                console.log('DirectionsService onLoad directionsService: ', directionsService)
-              }}
               // optional
             onUnmount={(ds) => {
                 console.log('DirectionsService unmount: ', ds);

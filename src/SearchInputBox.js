@@ -16,16 +16,17 @@ export const SearchInputBox = (panTo) => {
     const [allRoutes, setAllRoutes] = React.useState([]);
     let [routeName, setRouteName] = React.useState("");
     let [parkingLotData, setParkingLotData] = React.useState([]);
-
-    React.useEffect(() => {
-        axios.get("/api/routes").then(res => {
+    
+    // adding async await improved from 89 to 91
+    const clickInInput = async () => {
+        await axios.get("/api/routes").then(res => {
             setAllRoutes(res.data);
-        });
-    }, []);
+        }); 
+    }
 
     let routeIWantToClimb = allRoutes.length > 0 && allRoutes.filter((route) => {
         return (
-            routeName.length > 1 && route.routename.toLowerCase().includes(routeName.toLowerCase())
+            routeName.length > 5 && route.routename.toLowerCase().includes(routeName.toLowerCase())
         );
     })
     .map((route, index) => {
@@ -87,7 +88,7 @@ export const SearchInputBox = (panTo) => {
                     await routeWithoutGrade(e);
                 }}
             >
-                <ComboboxInput value={routeName} onChange={(e)=>{setRouteName(e.target.value)}} placeholder="Enter route name" />
+                <ComboboxInput value={routeName} onChange={(e)=>{setRouteName(e.target.value)}} placeholder="Enter route name" onClick={clickInInput} />
                 <ComboboxPopover>
                     <ComboboxList>
                         {routeIWantToClimb}

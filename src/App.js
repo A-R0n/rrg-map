@@ -1,7 +1,7 @@
-import './App.css';
 import React from "react";
 import {SearchInputBox} from './SearchInputBox';
 import {Directions} from './Directions.js';
+import './App.css';
 
 import {GoogleMap, useLoadScript} from "@react-google-maps/api";
 
@@ -29,6 +29,7 @@ export default function App() {
     mapRef.current = map;
   }, []);
 
+  // removing async await raised my performance score from an 86 to an 89
   const panTo = React.useCallback((lat, lng) => {
     mapRef.current.panTo({lat, lng});
     setGeoCords([lat, lng]);

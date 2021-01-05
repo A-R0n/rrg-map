@@ -1,6 +1,5 @@
 import React, {lazy} from "react";
 import {SearchInputBox} from './SearchInputBox';
-// import {Directions} from './Directions.js';
 import './App.css';
 const MyComponent = lazy(() => import("./MyComponent.js"));
 import {GoogleMap, useLoadScript} from "@react-google-maps/api";
@@ -50,7 +49,6 @@ export default function App() {
         center={miguels}
         onLoad={onMapLoad}>
           <React.Suspense fallback={<p>directions fallback</p>}>
-            {/* {<Directions geoCords={geoCords} mapRef={mapRef}/>} */}
             {<MyComponent geoCords={geoCords} mapRef={mapRef}/>}
             </React.Suspense>
       </GoogleMap>

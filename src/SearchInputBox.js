@@ -9,6 +9,8 @@ import {
     ComboboxOption
 } from "@reach/combobox";
 
+import "@reach/combobox/styles.css";
+
 
 export const SearchInputBox = (panTo) => {
     const [allRoutes, setAllRoutes] = React.useState([]);

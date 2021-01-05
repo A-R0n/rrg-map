@@ -2,10 +2,8 @@ import './App.css';
 import React from "react";
 import {SearchInputBox} from './SearchInputBox';
 import {Directions} from './Directions.js';
-// const Directions = React.lazy(() => import('./Directions'));
 
 import {GoogleMap, useLoadScript} from "@react-google-maps/api";
-import "@reach/combobox/styles.css";
 
 export default function App() {
   

@@ -16,8 +16,8 @@ export const SearchInputBox = (panTo) => {
     const [allRoutes, setAllRoutes] = React.useState([]);
     let [routeName, setRouteName] = React.useState("");
     let [parkingLotData, setParkingLotData] = React.useState([]);
-    
-    // adding async await improved from 89 to 91
+
+    // adding async await improved from 89 to 92
     const clickInInput = async () => {
         await axios.get("/api/routes").then(res => {
             setAllRoutes(res.data);

@@ -26,7 +26,7 @@ export const SearchInputBox = (panTo) => {
 
     let routeIWantToClimb = allRoutes.length > 0 && allRoutes.filter((route) => {
         return (
-            routeName.length > 5 && route.routename.toLowerCase().includes(routeName.toLowerCase())
+            routeName.length > 2 && route.routename.toLowerCase().includes(routeName.toLowerCase())
         );
     })
     .map((route, index) => {

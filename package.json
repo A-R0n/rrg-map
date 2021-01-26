@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reach/accordion": "^0.12.1",
     "@reach/combobox": "^0.11.2",
+    "@reach/dialog": "^0.12.1",
     "@react-google-maps/api": "^1.13.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

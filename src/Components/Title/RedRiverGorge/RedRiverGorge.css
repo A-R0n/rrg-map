@@ -1,0 +1,15 @@
+.outerSvgHeader {
+    display: flex;
+    justify-content: flex-start;
+    /* outline: 1px solid blue; */
+    background: #123939;
+    min-width: 480px;
+    min-height: 30px;
+}
+
+.outerSvgHeader svg  {
+    min-width: 100vw;
+    max-height: 10vh;
+    margin: none;
+    fill: white;
+}

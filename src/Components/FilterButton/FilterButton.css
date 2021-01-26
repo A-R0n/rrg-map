@@ -1,0 +1,73 @@
+.filterButton {
+    background: red;
+    display: flex;
+}
+
+#filter-icon {
+    margin-left: 0px;
+    padding-right: 0px;
+    fill: white;
+    background: #333;
+}
+
+.filterbtn {
+    background-color: #333;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+
+  .filterbtn:hover {
+      background-color: rgb(131, 130, 130);
+  }
+
+.typeParagraph {
+    display: flex;
+}
+
+  #labelForType {
+      padding-right: 30px;
+  }
+
+#maxGrade {
+    padding-left: 20px;
+}
+
+#min, #max {
+    width: 60px;
+}
+
+.ac {
+    width: 100%;
+    /* background: red; */
+    display: flex;
+    font-size: 16px;
+}
+
+/* iphone */
+@media only screen and (max-width: 375px) {
+    .dialogContent {
+        position: absolute;
+        left: 0;
+        min-width: 300px;
+    }
+
+    .typeParagraph {
+        justify-content: flex-start;
+    }
+
+    #labelForType {
+        padding-right: 10px;
+    }
+
+    #maxGrade {
+        padding-left: 15px;
+    }
+
+    #min, #max {
+        width: 60px;
+    }
+}
+

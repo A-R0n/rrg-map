@@ -5,8 +5,5 @@
 .header {
   display: flex;
   background: #333;
-  min-width: 430px;
-  /* padding: 5px; */
   overflow: hidden;
-  /* margin: 0; */
 }

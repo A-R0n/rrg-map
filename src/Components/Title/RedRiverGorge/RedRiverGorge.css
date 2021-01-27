@@ -13,3 +13,10 @@
     margin: none;
     fill: white;
 }
+
+/* iphone */
+@media only screen and (max-width: 375px) {
+    #rrgTitleText {
+        font-size: 9rem;
+    }
+}

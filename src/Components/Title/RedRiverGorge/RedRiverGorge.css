@@ -1,22 +1,27 @@
 .outerSvgHeader {
     display: flex;
     justify-content: flex-start;
-    background: #123939;
+    background: #c2b280;
 }
 
 .outerSvgHeader svg  {
-    width: 100vw;
-    height: 10vh;
-    fill: white;
+    height: 6vh;
+    fill: #1a130f;
+}
+
+#rrgTitleText {
+    font-size: .75rem;
+    font-stretch: ultra-condensed;
+}
+
+#emojiTitleText {
+    font-size: .5rem;
 }
 
 /* iphone */
 @media only screen and (max-width: 375px) {
-    #rrgTitleText {
-        font-size: 1rem;
-    }
 
     .outerSvgHeader svg  {
-        height: 5vh;
+        height: 4vh;
     }
 }

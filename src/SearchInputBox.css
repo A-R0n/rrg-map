@@ -6,9 +6,9 @@
     background: #726870;
 }
 
-input::placeholder {
+/* input::placeholder {
     font-size: 1.5em;
-  }
+  } */
 
 /* iphone */
 @media only screen and (max-width: 375px) {
@@ -26,6 +26,7 @@ input::placeholder {
     .SearchInputBox {
         width: 49vw;
         height: 4vh;
+        font-size: 1em;
     }
 
     .searched {

@@ -11,7 +11,7 @@
 
     .cBox {
         width: 58vw;
-        background: orange;
+        /* background: orange; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -20,7 +20,7 @@
     }
 
     .SearchInputBox {
-        width: 40vw;
+        width: 54vw;
         height: 4vh;
     }
 

@@ -1,12 +1,13 @@
 .outerSvgHeader {
     display: flex;
     justify-content: flex-start;
-    background: #c2b280;
+    background: #333;
+    /* background: #c2b280; */
 }
 
 .outerSvgHeader svg  {
     height: 6vh;
-    fill: #1a130f;
+    fill: #e6dcbf;
 }
 
 #rrgTitleText {
@@ -19,9 +20,9 @@
 }
 
 /* iphone */
-@media only screen and (max-width: 375px) {
+/* @media only screen and (max-width: 375px) {
 
     .outerSvgHeader svg  {
         height: 4vh;
     }
-}
+} */

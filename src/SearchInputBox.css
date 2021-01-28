@@ -30,14 +30,14 @@
     }
 }
 
-@media only screen and (max-width: 345px) {
+@media only screen and (max-width: 360px) {
 
     .cBox {
         background: orange;
         justify-content: flex-start;
     }
     .SearchInputBox {
-        width: 52vw;
+        width: 48vw;
         height: 4vh;
         border-radius: 5px;
     }

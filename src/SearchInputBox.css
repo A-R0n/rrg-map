@@ -1,7 +1,27 @@
 .searched {
     float: left;
     text-align: center;
-    padding-top: 8px;
+    padding-top: 6px;
     padding-left: 2px;
     background: #726870;
+}
+
+/* iphone */
+@media only screen and (max-width: 375px) {
+
+    .cBox {
+        width: 60vw;
+        height: 5vh;
+        /* background: orange; */
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .SearchInputBox {
+        width: 58vw;
+    }
+
+    .searched {
+        padding-top: 2px;
+    }
 }

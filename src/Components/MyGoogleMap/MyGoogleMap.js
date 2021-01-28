@@ -1,4 +1,5 @@
 import React, {lazy} from 'react';
+import './MyGoogleMap.css';
 import {GoogleMap, useLoadScript} from "@react-google-maps/api";
 // const LazyLoadDirections = lazy(() => import("../../LazyLoadDirections.js"));
 
@@ -22,6 +23,7 @@ export const MyGoogleMap = (geoCords, onMapLoad) => {
   if(!isLoaded) return "Loading Maps";
     return (
     <GoogleMap
+        id="GoogleMap"
         mapContainerStyle={mapContainerStyle}
         zoom={11}
         center={miguels}

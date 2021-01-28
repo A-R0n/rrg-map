@@ -21,9 +21,14 @@
 }
 
 /* iphone */
-/* @media only screen and (max-width: 375px) {
+@media only screen and (max-width: 375px) {
+
+    #rrgTitleText {
+        font-size: .55rem;
+    }
 
     .outerSvgHeader svg  {
-        height: 4vh;
+        width: 30vw;
+        fill: #e6dcbf;
     }
-} */
+}

@@ -2,12 +2,6 @@
     display: flex;
 }
 
-#filter-icon {
-    margin-left: 0px;
-    padding-right: 0px;
-    fill: rgb(85, 80, 80);
-}
-
 .filterbtn {
     background-color: #726870;
     display: flex;
@@ -45,6 +39,17 @@
 
 /* iphone */
 @media only screen and (max-width: 375px) {
+
+    .filterbtn {
+        position: absolute;
+        right: 0;
+        height: 7vh;
+    }
+
+    #filter-icon {
+        padding-bottom: 5px;
+    }
+
     .dialogContent {
         position: absolute;
         left: 0;

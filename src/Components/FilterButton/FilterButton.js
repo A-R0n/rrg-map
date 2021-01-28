@@ -33,9 +33,6 @@ export const FilterButton = () => {
         <div className="filterButton">
         <button className="filterbtn" onClick={open}>
             <img src="/filter.svg" alt="An actual filter" height="20px" width="25px" id="filter-icon"/>
-            {/* <svg height="10pt" viewBox="-25 0 315 20" width="30pt"          xmlns="http://www.w3.org/2000/svg">
-                <text x="-30" y="40" fontSize="6em" fill="#e6dcbf">FILTERS</text>
-            </svg> */}
         </button>
         <DialogOverlay isOpen={showDialog} onDismiss={close}>
         <DialogContent className="dialogContent"

@@ -10,8 +10,8 @@
 @media only screen and (max-width: 375px) {
 
     .cBox {
-        width: 58vw;
-        /* background: orange; */
+        width: 56vw;
+        background: orange;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -20,7 +20,7 @@
     }
 
     .SearchInputBox {
-        width: 54vw;
+        width: 50vw;
         height: 4vh;
     }
 
@@ -34,6 +34,7 @@
 
     .cBox {
         background: orange;
+        width: 48vw;
         justify-content: flex-start;
     }
     .SearchInputBox {

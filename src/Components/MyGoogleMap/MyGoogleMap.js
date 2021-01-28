@@ -1,6 +1,6 @@
 import React, {lazy} from 'react';
 import {GoogleMap, useLoadScript} from "@react-google-maps/api";
-const LazyLoadDirections = lazy(() => import("../../LazyLoadDirections.js"));
+// const LazyLoadDirections = lazy(() => import("../../LazyLoadDirections.js"));
 
 export const MyGoogleMap = (geoCords, onMapLoad) => {
     
@@ -26,9 +26,9 @@ export const MyGoogleMap = (geoCords, onMapLoad) => {
         zoom={11}
         center={miguels}
         onLoad={onMapLoad.onMapLoad}>
-          <React.Suspense fallback={<p>directions fallback</p>}>
+          {/* <React.Suspense fallback={<p>directions fallback</p>}>
             {<LazyLoadDirections geoCords={geoCords.geoCords}/>}
-            </React.Suspense>
+            </React.Suspense> */}
     </GoogleMap>
     )
 }

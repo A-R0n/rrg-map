@@ -64,21 +64,9 @@ export const SearchInputBox = (panTo) => {
         })
     };
 
-    let routesName = "";
-
     let routeWithoutGrade = async (e) => {
-        console.log("routeWithoutGrade", e);
-
-        for(let i = 0; i < e.length; i++) {
-            if(e[i] !== ",") {
-                routesName += e[i];
-                console.log(routesName);
-            }
-            else {
-                await findCords(routesName);
-                break;
-            }
-        }
+        let routesName = e.split(",");
+        await findCords(routesName[0]);
     }
 
     return (

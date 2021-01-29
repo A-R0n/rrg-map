@@ -1,13 +1,15 @@
 import React, {lazy} from 'react';
 import './MyGoogleMap.css';
 import {GoogleMap, useLoadScript} from "@react-google-maps/api";
-// const LazyLoadDirections = lazy(() => import("../../LazyLoadDirections.js"));
+const LazyLoadDirections = lazy(() => import("../../LazyLoadDirections.js"));
 
-export const MyGoogleMap = (geoCords, onMapLoad) => {
+function MyGoogleMap(props){
+
+  console.log(props);
     
-    const {isLoaded, loadError} = useLoadScript({
+  const {isLoaded, loadError} = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
-    });
+  });
 
   const mapContainerStyle = {
     width: "100vw",
@@ -27,10 +29,12 @@ export const MyGoogleMap = (geoCords, onMapLoad) => {
         mapContainerStyle={mapContainerStyle}
         zoom={11}
         center={miguels}
-        onLoad={onMapLoad.onMapLoad}>
-          {/* <React.Suspense fallback={<p>directions fallback</p>}>
-            {<LazyLoadDirections geoCords={geoCords.geoCords}/>}
-            </React.Suspense> */}
+        onLoad={props.onMapLoad}>
+          <React.Suspense fallback={<p>directions fallback</p>}>
+            {<LazyLoadDirections geoCords={props.geoCords}/>}
+            </React.Suspense>
     </GoogleMap>
     )
 }
+
+export default React.memo(MyGoogleMap);

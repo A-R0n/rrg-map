@@ -1,9 +1,7 @@
 import React from "react";
 import {Header} from './Components/Header/Header.js';
-// import {SearchInputBox} from './SearchInputBox';
 import './App.css';
-// const LazyLoadFilterButton = lazy(() => import("./LazyLoadFilterButton.js"));
-import {MyGoogleMap} from './Components/MyGoogleMap/MyGoogleMap.js';
+import MyGoogleMap from './Components/MyGoogleMap/MyGoogleMap.js';
 
 export default function App() {
 
@@ -15,22 +13,11 @@ export default function App() {
     mapRef.current = map;
   }, []);
 
-  // the useCallback hook memoizes the panTo map function
-  // By wrapping the function in useCallback, we prevent unnecessary re-renders
-  // of the children, b/c they will be using the same function obj
-  // const panTo = React.useCallback((lat, lng) => {
-  //   setGeoCords([lat, lng]);
-  // }, []);
+  console.log(geoCords);
 
   return (
     <div className="App"> 
-      <Header />
-      {/* <div className="header">
-        <SearchInputBox panTo={panTo}/>
-        <React.Suspense fallback={<p>FB</p>}>
-          {<LazyLoadFilterButton/>}
-        </React.Suspense>
-      </div> */}
+      <Header setGeoCords={setGeoCords}/>
       <MyGoogleMap geoCords={geoCords} onMapLoad={onMapLoad}/>
     </div>
   );

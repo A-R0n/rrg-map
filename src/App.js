@@ -2,6 +2,8 @@ import React from "react";
 import {Header} from './Components/Header/Header.js';
 import './App.css';
 import MyGoogleMap from './Components/MyGoogleMap/MyGoogleMap.js';
+// const MyGoogleMap = lazy(() => import("./Components/MyGoogleMap/MyGoogleMap.js"));
+
 
 export default function App() {
 
@@ -16,10 +18,10 @@ export default function App() {
   console.log(geoCords);
 
   return (
-    <div className="App"> 
-      <Header setGeoCords={setGeoCords}/>
+    <main className="App"> 
+      <Header setGeoCords={setGeoCords} mapRef={mapRef}/>
       <MyGoogleMap geoCords={geoCords} onMapLoad={onMapLoad}/>
-    </div>
+    </main>
   );
 }
 

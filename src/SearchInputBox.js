@@ -85,6 +85,7 @@ export const SearchInputBox = (panTo) => {
         <div className="searched">
             <Combobox className="cBox"
                 onSelect={async (e) => {
+                    await setRouteName(e);
                     await routeWithoutGrade(e);
                 }}
             >

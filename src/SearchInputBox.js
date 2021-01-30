@@ -77,7 +77,13 @@ export const SearchInputBox = (panTo) => {
                     await routeWithoutGrade(e);
                 }}
             >
-                <ComboboxInput className="SearchInputBox" value={routeName} onChange={(e)=>{setRouteName(e.target.value)}} placeholder="Enter route name" onClick={clickInInput} />
+                <label for="SearchInputBox">
+                    <svg height="20" width="52">
+                        <text x="0" y="20" fill="white">Search</text>
+                    </svg>
+                </label>
+                <ComboboxInput id="SearchInputBox" value={routeName} onChange={(e)=>{setRouteName(e.target.value)}} placeholder="Route Name" onClick={clickInInput} />
+                
                 <ComboboxPopover>
                     <ComboboxList>
                         {routeIWantToClimb}

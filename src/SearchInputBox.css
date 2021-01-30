@@ -23,7 +23,7 @@
         padding-left: 0px;
     }
 
-    .SearchInputBox {
+    #SearchInputBox {
         width: 49vw;
         height: 4vh;
         font-size: 1em;
@@ -42,7 +42,7 @@
         width: 48vw;
         justify-content: flex-start;
     }
-    .SearchInputBox {
+    #SearchInputBox {
         width: 40vw;
         height: 4vh;
         border-radius: 5px;

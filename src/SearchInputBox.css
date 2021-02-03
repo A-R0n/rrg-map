@@ -3,6 +3,6 @@
 .special-box {
     width: 88vw;
     height: 5vh;
-    transition: width 2s; 
+    transition: width .25s; 
     text-indent: 25px; 
 }

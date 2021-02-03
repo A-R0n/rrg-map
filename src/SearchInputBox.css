@@ -1,50 +1,8 @@
-.searched {
-    float: left;
-    text-align: center;
-    padding-top: 6px;
-    padding-left: 2px;
-    background: #726870;
-}
 
-/* input::placeholder {
-    font-size: 1.5em;
-  } */
 
-/* iphone */
-@media only screen and (max-width: 375px) {
-
-    .cBox {
-        width: 56vw;
-        background: orange;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        padding-left: 0px;
-    }
-
-    #SearchInputBox {
-        width: 49vw;
-        height: 4vh;
-        font-size: 1em;
-    }
-
-    .searched {
-        padding-top: 2px;
-        padding-left: 8px;
-    }
-}
-
-@media only screen and (max-width: 360px) {
-
-    .cBox {
-        background: orange;
-        width: 48vw;
-        justify-content: flex-start;
-    }
-    #SearchInputBox {
-        width: 40vw;
-        height: 4vh;
-        border-radius: 5px;
-    }
+.special-box {
+    width: 88vw;
+    height: 5vh;
+    transition: width 2s; 
+    text-indent: 25px; 
 }

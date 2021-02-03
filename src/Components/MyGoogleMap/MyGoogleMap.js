@@ -1,7 +1,8 @@
-import React, {lazy} from 'react';
+import React, {lazy, Suspense, memo} from 'react';
 import './MyGoogleMap.css';
 import {GoogleMap, useLoadScript} from "@react-google-maps/api";
 const LazyLoadDirections = lazy(() => import("../../LazyLoadDirections.js"));
+// import {Directions} from '../../Directions';
 
 function MyGoogleMap(props){
 
@@ -30,11 +31,11 @@ function MyGoogleMap(props){
         zoom={11}
         center={miguels}
         onLoad={props.onMapLoad}>
-          <React.Suspense fallback={<p>directions fallback</p>}>
+          <Suspense fallback={<p>directions fallback</p>}>
             {<LazyLoadDirections geoCords={props.geoCords}/>}
-            </React.Suspense>
+          </Suspense>            
     </GoogleMap>
     )
 }
 
-export default React.memo(MyGoogleMap);
+export default memo(MyGoogleMap);

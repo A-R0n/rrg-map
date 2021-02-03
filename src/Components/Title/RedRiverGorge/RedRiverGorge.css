@@ -1,19 +1,15 @@
 .outerSvgHeader {
     display: flex;
-    justify-content: flex-start;
-    background: #726870;
-    /* background: #333; */
-    /* background: #c2b280; */
+    /* background: #726870; */
 }
 
 .outerSvgHeader svg  {
-    height: 6vh;
+    height: 5vh;
     fill: #e6dcbf;
 }
 
 #rrgTitleText {
     font-size: .75rem;
-    font-stretch: ultra-condensed;
 }
 
 #emojiTitleText {

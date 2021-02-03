@@ -26,13 +26,16 @@
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
     "react": "^17.0.1",
+    "react-animate-height": "^2.0.23",
     "react-dom": "^17.0.1",
     "react-google-maps": "^9.4.5",
     "react-scripts": "4.0.0",
     "referrer-policy": "^1.2.0",
+    "source-map-explorer": "^2.5.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "both": "concurrently \"react-scripts start\" \"nodemon server/index.js --watch server\"",

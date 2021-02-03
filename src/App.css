@@ -39,7 +39,7 @@ position: relative;
 .input-father {
   width: 88vw;
   height: 5vh;
-  transition: width 2s; 
+  transition: width .25s; 
   text-align: left; 
   background: gold;
   /* color: white; */
@@ -89,7 +89,7 @@ position: relative;
   /* display: flex; */
   left: 100px;
   /* width: 100%; */
-  transition: left 10s;
+  transition: left .25s;
 
   /* margin-left: 0px; */
   /* width: 60px; */

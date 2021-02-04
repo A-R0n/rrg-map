@@ -33,7 +33,9 @@ export default function App() {
 
     // cancelBtnRef.current.style.width = "30%";
     // cancelBtnRef.current.style.width = "30vw";
-    cancelBtnRef.current.style.left = "0";
+    micBtnRef.current.style.left = "0px";
+
+    cancelBtnRef.current.style.left = "5px";
 
     
     micBtnRef.current.style.border = "1px solid orange";

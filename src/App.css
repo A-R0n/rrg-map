@@ -39,7 +39,9 @@ position: relative;
 .input-father {
   width: 88vw;
   height: 5vh;
-  transition: width .4s; 
+  /* transition: width .4s;  */
+  transition: left .4s; 
+
   text-align: left; 
   background: gold;
   /* color: white; */
@@ -62,6 +64,10 @@ position: relative;
 }
 
 #mic {
+  position: absolute;
+  left: 0px;
+  height: 100%;
+  width: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,8 +92,10 @@ position: relative;
 }
 
 .cancel-btn {
+  position: absolute;
   /* display: flex; */
-  left: 100px;
+  top: 5px;
+  left: 32px;
   /* width: 100%; */
   transition: left .4s;
 

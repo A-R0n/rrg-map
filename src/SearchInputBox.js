@@ -87,10 +87,6 @@ export const SearchInputBox = (props, ref) => {
     //     await setInputExists(false);
     // }
 
-    const maintainWidth = (e) => {
-        console.log(e);
-        e.target.style.width = "70vw";
-    }
     return (
         <div className="searched">
             <Combobox className="cBox"
@@ -106,7 +102,7 @@ export const SearchInputBox = (props, ref) => {
                     </svg>
                 </label> */}
                 {/* <ComboboxInput id="SearchInputBox" value={routeName} onChange={(e)=>{handleUserTyping(e.target.value)}} placeholder="Search for a route" onClick={clickInInput} /> */}
-                <ComboboxInput className="special-box" value={routeName} onChange={(e)=>{handleUserTyping(e.target.value)}} placeholder="Search for a route" onClick={clickInInput} ref={miRef} onFocus={(e) => maintainWidth(e)}/>
+                <ComboboxInput className="special-box" value={routeName} onChange={(e)=>{handleUserTyping(e.target.value)}} placeholder="Search for a route" onClick={clickInInput} ref={miRef}/>
                 
                 <ComboboxPopover>
                     <ComboboxList>
